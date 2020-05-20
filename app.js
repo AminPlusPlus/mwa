@@ -4,7 +4,7 @@ const server = http.createServer();
 server.on("request", (req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
   res.write("Home");
-  res.end;
+  res.end();
 });
 
 server.listen(3000);
