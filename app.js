@@ -1,9 +1,11 @@
-const EventEmitter = require("events");
+const http = require("http");
 
-const eventEmitter = new EventEmitter();
-
-eventEmitter.on("sendMessage", (args) => {
-  console.log(`${args.id}`);
+const server = http.createServer();
+server.on("request", (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.write("Home");
+  res.end;
 });
 
-eventEmitter.emit("sendMessage", { id: "112", name: "Amin" });
+server.listen(3000);
+console.log("Connection");
