@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
+
 app.use(express.json());
 
 const movieRoute = require("./routes/movies");
-app.use(movieRoute);
+app.use("/movies", movieRoute);
 
 const versionApi = {
   version: "v1.0.0",
