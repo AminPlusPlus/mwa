@@ -6,7 +6,9 @@ const users = require("./routes/users");
 const products = require("./routes/products");
 
 app.use(bodyParse.urlencoded());
+
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
+
 app.use("/static", express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {

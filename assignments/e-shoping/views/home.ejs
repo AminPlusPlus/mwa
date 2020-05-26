@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('fragments/head.ejs')%>
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <%- include('fragments/nav.ejs')%>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Shop Cards</h1>
+        <p class="lead">
+          Cards
+        </p>
+      </div>
+    </div>
+
+    <div class="container d-flex flex-wrap offset-2">
+      <% for (var i = 0; i<items.length; i++) { %>
+      <div class="card" style="width: 18rem; padding: 10px;">
+        <img
+          src=<%= items[i].imageUlr %>
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= items[i].name %></h5>
+          <p class="card-text">
+           <%= items[i].description %>
+          </p>
+          <h5 class="card-title"><%= items[i].price %> $</h5>
+          <a href="#" class="btn btn-danger">Delete</a>
+          <a href="#" class="btn btn-primary">Edit</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
